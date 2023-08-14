@@ -2,7 +2,7 @@
 from flask import Flask
 
 # imports home and dashboard modules
-from app.routes import home, dashboard
+from app.routes import home, dashboard, api
 # imoirts init_db function
 from app.db import init_db
 from app.utils import filters
@@ -26,6 +26,7 @@ def create_app(test_config=None):
     # register routes
     app.register_blueprint(home)
     app.register_blueprint(dashboard)
+    app.register_blueprint(api)
 
     init_db(app)
 
